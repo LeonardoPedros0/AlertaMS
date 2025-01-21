@@ -1,0 +1,284 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    
+}
+
+header {
+    display: flex;
+    justify-content: left; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    height: 100px; /* Defina a altura desejada para o cabeçalho */
+    background-color: #f2f2f2; /* Cor de fundo do cabeçalho */
+}
+
+#title {
+    text-align: left; /* Centraliza o texto horizontalmente */
+}
+
+#title h1 {
+    font-size: 36px; /* Tamanho da fonte do título */
+    font-weight: bold; /* Peso da fonte */
+}
+
+.menu {
+    background-color: #bccada;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden; /* Adiciona uma correção para bordas arredondadas em elementos filhos */
+}
+
+.menu nav {
+    display: flex;
+    justify-content: center;
+}
+
+.menu nav ul {
+    padding: 0;
+    margin: 0;
+    display: inline;
+    justify-content: center;
+}
+
+.menu nav li {
+    list-style: none;
+    text-decoration: none; /* Remove sublinhado dos links */
+    margin: 10px 15px; /* Margem consistente */
+}
+
+.menu nav li:hover {
+    background-color: #bfc1c4;
+    font-weight: bold;
+    transform: scale(1.08); /* Aumenta o item ao passar o mouse */
+    border-radius: 5px; /* Adiciona borda arredondada ao passar o mouse */
+}
+
+.menu nav a {
+    text-decoration: none; /* Remove sublinhado dos links */
+    color: #333; /* Define a cor do texto */
+    padding: 10px 20px; /* Adiciona preenchimento interno para aumentar a área clicável */
+    display: block; /* Garante que o link preencha todo o item da lista */
+    font-size: 16px; /* Define um tamanho de fonte adequado */
+    transition: color 0.3s ease; /* Adiciona transição suave para a cor do texto */
+}
+
+.menu nav a:hover {
+    color: #000; /* Muda a cor do texto ao passar o mouse */
+}
+
+
+/* Media query para ajustar o tamanho máximo do menu em dispositivos menores */
+@media screen and (max-width: 768px) {
+    .menu nav li {
+        list-style: none;
+        text-decoration: none; /* Remove sublinhado dos links */
+        margin: 10px 0px; /* Margem consistente */
+    }
+    
+    .menu nav li:hover {
+        background-color: #bfc1c4;
+        transform: scale(1.08); /* Aumenta o item ao passar o mouse */
+        border-radius: 5px; /* Adiciona borda arredondada ao passar o mouse */
+    }
+    #title h1 {
+        font-size: 30px; /* Tamanho da fonte do título */
+        font-weight: bold; /* Peso da fonte */
+    }
+}
+
+
+.container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.button-box {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #000cb3;
+}
+
+footer {
+    position: relative;
+    margin-bottom: 0;
+    clear: both;
+    border-top: 1px solid #000;
+}
+footer p {
+    margin: 10px 0 20px 0;
+    text-align: center;
+    font-size: 90%;
+}
+
+main {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#capital {
+    width: 60%; /* Largura da caixa de seleção */
+    padding: 10px; /* Espaçamento interno */
+    font-size: 15px; /* Tamanho da fonte */
+    border: 1px solid #ccc; /* Borda */
+    border-radius: 5px; /* Cantos arredondados */
+    background-color: #f9f9f9; /* Cor de fundo */
+    color: #333; /* Cor do texto */
+    outline: none; /* Remover a borda de foco */
+    text-align: center;
+}
+
+/* Estilo para as opções da caixa de seleção */
+#capital option {
+    font-size: 16px; /* Tamanho da fonte */
+    padding: 5px; /* Espaçamento interno */
+}
+
+fieldset {
+    border: 1px solid #ccc; /* Borda */
+    border-radius: 5px; /* Cantos arredondados */
+    margin-top: 20px;
+}
+
+legend {
+    font-weight: bold; /* Texto em negrito */
+}
+
+label {
+    display: inline-block;
+    margin: 10px; /* Aumenta o espaço entre os checkboxes */
+    cursor: pointer;
+}
+
+.figura-container {
+    display: flex;
+    justify-content: center; /* Opcional: ajuste de espaçamento entre figuras */
+    gap: 20px; /* Espaçamento entre figuras */
+}
+
+.figura {
+    margin: 10px;
+    flex-basis: 100%; /* Define a largura padrão para ocupar 100% da linha */
+}
+
+.figura.grafico {
+    flex-basis: 70%; /* Ocupa 70% da largura */
+}
+
+.figura.imagem {
+    flex-basis: 30%; /* Ocupa 30% da largura */
+}
+
+.figura img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Media query para ajustar o layout quando a largura da tela for menor */
+@media screen and (max-width: 768px) {
+    .figura-container {
+        display: flex;
+        flex-wrap: wrap; /* Permite que as figuras quebrem para a linha seguinte quando não couberem na largura */
+        gap: 10px; /* Espaçamento entre figuras */
+    }
+    .figura.grafico {
+        flex-basis: 100%; /* Quando a tela for menor, o gráfico ocupará toda a largura */
+    }
+    .figura.imagem {
+        flex-basis: 100%; /* Quando a tela for menor, a imagem ocupará toda a largura */
+    }
+}
+
+table {
+    width: 50%;
+    height: 10%;
+    border-collapse: collapse;
+    margin: 11% 25%;
+    font-size: 12px;
+    text-align: center;
+}
+th, td {
+    padding: 2px 2px;
+    border: 0.5px solid #000;
+}
+th {
+    background-color: #f2f2f2;
+}
+
+
+.info-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.info-icon {
+    background-color: #ccc; /* Cor de fundo cinza */
+    color: #333;           /* Cor do texto cinza escuro */
+    border-radius: 50%;
+    padding: 3px 6px;      /* Ícone pequeno */
+    font-size: 12px;       /* Fonte pequena */
+    font-weight: bold;
+    text-align: left;
+    display: inline-block;
+}
+
+.info-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: justify;
+    border-radius: 6px;
+    padding: 8px 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Posicione acima do ícone */
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px; /* Tamanho da fonte */
+}
+
+.info-container:hover .info-text {
+    visibility: visible;
+    opacity: 1;
+}

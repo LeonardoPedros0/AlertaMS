@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<main>
+    <form id="weatherForm" action="/AMSPrevisao" method="GET">
+        <select id="capital" name="capital">
+            <option value="" selected disabled hidden>Selecione uma Cidade</option>
+            <option value="Manaus_AM">Manaus - AM</option>
+            <option value="Natal_RN">Natal - RN</option>
+            <option value="Porto Alegre_RS">Porto Alegre - RS</option>
+            <option value="Recife_PE">Recife - PE</option>
+            <option value="Salvador_BA">Salvador - BA</option>
+            <option value="Sao Luis_MA">São Luís - MA</option>
+            <option value="Sao Paulo_SP">São Paulo - SP</option>
+            <option value="Teresina_PI">Teresina - PI</option>
+        </select>
+
+        <fieldset>
+            <legend>Escolha os modelos de previsão:</legend>
+
+            <label>
+                <input type="checkbox" name="model" value="dwd_fc">
+                <span>DWD (CF)</span>
+            </label>
+
+            <label>
+                <input type="checkbox" name="model" value="ecmwf_cf">
+                <span>ECMWF (CF)</span>
+            </label>
+
+            <label>
+                <input type="checkbox" name="model" value="ecmwf_fc">
+                <span>ECMWF (FC)</span>
+            </label>
+
+            <label>
+                <input type="checkbox" name="model" value="GFS_thredds">
+                <span>GFS</span>
+            </label>
+
+            <label>
+                <input type="checkbox" name="model" value="rjtd_cf">
+                <span>JMA (CF)</span>
+            </label>
+            <div class="info-container">
+                <span class="info-icon">ⓘ</span>
+                <div class="info-text">
+                    Informações sobre FC e CF
+                </div>
+            </div>
+        </fieldset>
+
+        <button class="button" id="submitButton" type="submit">
+            Gerar Gráfico
+        </button>
+    </form>
+
+    {% if modelos %}
+    {% if cidade %}
+    <h1>Resultado da Previsão</h1>
+
+    <p>Cidade selecionada: {{ cidade }}</p>
+    <!-- <p>Modelos selecionados:</p>
+    <ul>
+        {% for modelo in modelos %}
+        <li>{{ modelo }}</li>
+        {% endfor %}
+    </ul> -->
+    <div class="figura-container">
+        <div class="figura grafico">
+            {% include 'grafico.html' %}
+        </div>
+        <div class="figura imagem">
+            {% if fig_cidade.startswith('http') %}
+            <img src="{{ fig_cidade }}" alt="Gráfico da cidade">
+            {% else %}
+            <img src="{{ url_for('static', filename=fig_cidade) }}" alt="Mapa da cidade">
+            {% endif %}
+
+            {% else %}
+            <p>Nenhuma cidade selecionada.</p>
+            {% endif %}
+            {% else %}
+            <p>Nenhum modelo selecionado.</p>
+            {% endif %}
+            {% if not limiar_min == 1 %}
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Limiares</th>
+                    </tr>
+                    <tr>
+                        <th>min</th>
+                        <th>max</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ limiar_min }}</td>
+                        <td>{{ limiar_max }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            {% endif %}
+        </div>
+</main>
+{% endblock %}
