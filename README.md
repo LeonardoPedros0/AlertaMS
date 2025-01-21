@@ -1,8 +1,4 @@
-Aqui está um exemplo de um arquivo `README.md` para o seu projeto:
 
----
-
-```markdown
 # 🌤️ Alerta Meteorológico de Saúde
 
 Este projeto é uma aplicação web que utiliza previsões meteorológicas e análise de dados climáticos para alertar sobre condições que possam impactar a saúde. Ele apresenta informações organizadas e visualizações interativas para facilitar o entendimento de alertas de temperatura e condições climáticas em diferentes regiões do Brasil.
@@ -53,7 +49,7 @@ Este projeto é uma aplicação web que utiliza previsões meteorológicas e an�
    ```bash
    git clone https://github.com/seuusuario/seurepositorio.git
    cd seurepositorio
-   ```
+
 
 2. Crie e ative o ambiente virtual:
    ```bash
